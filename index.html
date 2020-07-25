@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/skeleton.css">
 	<link rel="stylesheet" href="fontawesome/css/all.min.css">
+	<script type="text/javascript"  src="jquery-3.5.1.min.js"></script>
 	<style>
 		body {
 			font-family: 'Open Sans', sans-serif;
@@ -18,6 +19,8 @@
 		div#right {
 			filter: grayscale(1);
 			-webkit-filter: grayscale(1);
+			transition: all 0.2s linear;
+			-webkit-transition: all 0.2s linear;
 		}
 		div#right:hover {
 			filter: none;
@@ -37,99 +40,121 @@
 			color: black;
 		}
 		div.icons a.icon:hover {
-			color: #0FA0CE
+			color: #0FA0CE;
 		}
-		h5 {
-			text-decoration: underline;
-			text-decoration-style: dotted;
+		a.tab {
+			font-family:'Courier New', Courier, monospace;
+			font-weight: bold;
+			text-decoration: none;
 		}
 	</style>
-
 </head>
 <body>
-
-  <div class="container">
-	<div class="row" style="margin-top:100px">
-		<div id="left" class="nine columns">
-			<h3>Ali Utkan Şahin</h3>
-			<p>Computer Engineering & Science student at <a href="https://www.ku.edu.tr">Koç University</a>.</p>
-			<p>
-				My research interests include distributed data structures, P2P networks and security. Currently working as an undergraduate research assistant
-				at <a href="https://disnet.ku.edu.tr">Distributed Systems and Reliable Networks Research Laboratory</a>. 
-				You can reach me at <a href="mailto:asahin17@ku.edu.tr">asahin17@ku.edu.tr</a>, or check out my <a href="cv.pdf">CV</a>.
-			</p>
-			<h5>Education</h5>
-			<ul>
-				<li>Koç University - <strong>BSc</strong></li>
-				<li>Robert College - <strong>High school</strong></li>
-			</ul>	
-			<h5>Current Projects</h5>
-			<ul>
-				<li><b>Fog - Fog Federation</b></li>
-				<li><b>BFT Over Skip-Graph</b></li>
-				<li><b>The Skip-Graph Middleware Implementation</b></li>
-			</ul>
-			<h5>Past Projects</h5>
-			<ul>
-				<li>
-					<b>Authenticated Search Over Skip Graph</b>
-				</li>
-				<li>
-					<b>Identity-Based Threshold Digital Signature Scheme</b> [<a href="https://github.com/utkn/GuardCrypto" target="_blank">Code</a>] [<a href="https://eprint.iacr.org/2012/073.pdf" target="_blank">Reference</a>]
-				</li>
-				<li>
-					<b>Consensus Simulations On SkipSim</b>
-				</li>
-				<li>
-					<b>Hypergeometric Distribution Over Skip Lists</b> [<a href="https://github.com/yhassanzadeh13/H-SkipList" target="_blank">Code</a>]
-				</li>
-			</ul>
-			<h5>Conference Demos</h5>
-			<ul>
-				<li>
-					<strong>A Proof-of-Concept Implementation of Guard Secure Routing Protocol</strong>, Sanaz Taheri, Ali Utkan Şahin, Yahya Hassanzadeh, <i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020, to be presented)
-					[<a href="#">Paper</a>]	[<a href="https://github.com/staheri14/Guard">Code</a>]	
-				</li>
-				<li>
-					<strong>The Skip-Graph Middleware Implementation</strong>, Yahya Hassanzadeh, Nazir Nayal, Shadi Hamdan, Ali Utkan Şahin, Öznur Özkasap, Alptekin Küpçü, <i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020)
-					[<a href="#">Paper</a>]	[<a href="https://github.com/yhassanzadeh13/SkipGraphNode">Code</a>]	
-				</li>
-				<li>			
-					<strong>SkipSim: Scalable Skip-Graph Simulator</strong>, Yahya Hassanzadeh, Ali Utkan Şahin, Öznur Özkasap, Alptekin Küpçü, <i>IEEE International Conference on Blockchain.</i> (May 2020)
-					[<a href="#">Paper</a>] [<a href="https://github.com/yhassanzadeh13/SkipSim">Code</a>]
-				</li>
-			</ul>
-		</div>
-		<div id="right" class="three columns">
-			<img src="images/trip.jpg" id="head" alt="My photo" style="width:100%">
-			<div class="row icons">
-				<div class="three columns">
-					<a class="icon" href="https://linkedin.com/in/utkan-şahin-563a91151/" target="_blank">
-						<i class="fab fa-linkedin-in"></i>
-					</a>
-				</div>
-				<div class="three columns">
-					<a class="icon" href="https://github.com/utkn" target="_blank">
-						<i class="fab fa-github"></i>
-					</a>
-				</div>
-				<div class="three columns">
-					<a href="https://gitlab.com/utkn" class="icon" target="_blank">
-						<i class="fab fa-gitlab"></i>
-					</a>
-				</div>
-				<div class="three columns">
-					<a href="#" class="icon" target="_blank">
-						<i class="fab fa-snapchat-ghost"></i>
-					</a>
+	<script>
+		$(function() {
+			$("a.tab").click(function() {
+				let id = $(this).attr("href");
+				let cnt = $(id);
+				cnt.toggle();
+				if(cnt.is(":visible")) {
+					$(this).html("[-]");
+				} else {
+					$(this).html("[+]");
+				}
+			});
+		})
+		
+	</script>
+	<div class="container">
+		<div class="row" style="margin-top:100px">
+			<div id="left" class="nine columns">
+				<h3>Ali Utkan Şahin</h3>
+				<p>Computer Engineering & Science student at <a href="https://www.ku.edu.tr">Koç University</a>.</p>
+				<p>
+					My research interests include distributed data structures, P2P networks and security. Currently working as an undergraduate research assistant
+					at <a href="https://disnet.ku.edu.tr">Distributed Systems and Reliable Networks Research Laboratory</a>. 
+					You can reach me at <a href="mailto:asahin17@ku.edu.tr">asahin17@ku.edu.tr</a>, or check out my <a href="cv.pdf">CV</a>.
+				</p>
+				<h5>Education
+					<span><a class="tab" href="#education">[+]</a></span>
+				</h5>
+				<ul id="education" hidden>
+					<li>Koç University - <strong>BSc</strong></li>
+					<li>Robert College - <strong>High school</strong></li>
+				</ul>	
+				<h5>Current Projects
+					<span><a class="tab" href="#current-projects">[-]</a></span>
+				</h5>
+				<ul id="current-projects">
+					<li><b>Fog - Fog Federation</b></li>
+					<li><b>BFT Over Skip-Graph</b></li>
+					<li><b>The Skip-Graph Middleware Implementation</b></li>
+				</ul>
+				<h5>Past Projects
+					<span><a class="tab" href="#past-projects">[-]</a></span>
+				</h5>
+				<ul id="past-projects">
+					<li>
+						<b>Authenticated Search Over Skip Graph</b>
+					</li>
+					<li>
+						<b>Identity-Based Threshold Digital Signature Scheme</b> [<a href="https://github.com/utkn/GuardCrypto" target="_blank">Code</a>] [<a href="https://eprint.iacr.org/2012/073.pdf" target="_blank">Reference</a>]
+					</li>
+					<li>
+						<b>Consensus Simulations On SkipSim</b>
+					</li>
+					<li>
+						<b>Hypergeometric Distribution Over Skip Lists</b> [<a href="https://github.com/yhassanzadeh13/H-SkipList" target="_blank">Code</a>]
+					</li>
+				</ul>
+				<h5>Conference Demos
+					<span><a class="tab" href="#conference-demos">[-]</a></span>
+				</h5>
+				<ul id="conference-demos">
+					<li>
+						<strong>A Proof-of-Concept Implementation of Guard Secure Routing Protocol</strong>, Sanaz Taheri, Ali Utkan Şahin, Yahya Hassanzadeh, <i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020, to be presented)
+						[<a href="#">Paper</a>]	[<a href="https://github.com/staheri14/Guard">Code</a>]	
+					</li>
+					<li>
+						<strong>The Skip-Graph Middleware Implementation</strong>, Yahya Hassanzadeh, Nazir Nayal, Shadi Hamdan, Ali Utkan Şahin, Öznur Özkasap, Alptekin Küpçü, <i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020)
+						[<a href="#">Paper</a>]	[<a href="https://github.com/yhassanzadeh13/SkipGraphNode">Code</a>]	
+					</li>
+					<li>			
+						<strong>SkipSim: Scalable Skip-Graph Simulator</strong>, Yahya Hassanzadeh, Ali Utkan Şahin, Öznur Özkasap, Alptekin Küpçü, <i>IEEE International Conference on Blockchain.</i> (May 2020)
+						[<a href="#">Paper</a>] [<a href="https://github.com/yhassanzadeh13/SkipSim">Code</a>]
+					</li>
+				</ul>
+			</div>
+			<div id="right" class="three columns">
+				<img src="images/trip.jpg" id="head" alt="My photo" style="width:100%">
+				<div class="row icons">
+					<div class="three columns">
+						<a class="icon" href="https://linkedin.com/in/utkan-şahin-563a91151/" target="_blank">
+							<i class="fab fa-linkedin-in"></i>
+						</a>
+					</div>
+					<div class="three columns">
+						<a class="icon" href="https://github.com/utkn" target="_blank">
+							<i class="fab fa-github"></i>
+						</a>
+					</div>
+					<div class="three columns">
+						<a href="https://gitlab.com/utkn" class="icon" target="_blank">
+							<i class="fab fa-gitlab"></i>
+						</a>
+					</div>
+					<div class="three columns">
+						<a href="#" class="icon" target="_blank">
+							<i class="fab fa-snapchat-ghost"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 	<div id="row">
 		
 	</div>
-  </div>
+	</div>
 
 </body>
 </html>
