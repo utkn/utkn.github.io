@@ -52,17 +52,26 @@
 </head>
 <body>
 	<script>
+		// Toggles a section that is related to the given `a` element.
+		function toggleSection(toggler) {
+			let id = $(toggler).attr("href");
+			let cnt = $(id);
+			cnt.toggle();
+			if(cnt.is(":visible")) {
+				$(toggler).html("[-]");
+			} else {
+				$(toggler).html("[+]");
+			}
+		}
+
 		$(function() {
 			$("a.tab").click(function() {
-				let id = $(this).attr("href");
-				let cnt = $(id);
-				cnt.toggle();
-				if(cnt.is(":visible")) {
-					$(this).html("[-]");
-				} else {
-					$(this).html("[+]");
-				}
+				toggleSection(this);
 			});
+			// Close all the sections if JS is enabled.
+			$("a.tab").each(function(_, x) {
+				toggleSection(x);
+			})
 		})
 		
 	</script>
@@ -70,16 +79,16 @@
 		<div class="row" style="margin-top:100px">
 			<div id="left" class="nine columns">
 				<h3>Ali Utkan Şahin</h3>
-				<p>Computer Engineering & Science student at <a href="https://www.ku.edu.tr">Koç University</a>.</p>
+				<p>Computer Engineering & Science student at <a href="https://www.ku.edu.tr" target="_blank">Koç University</a>.</p>
 				<p>
 					My research interests include distributed data structures, P2P networks and security. Currently working as an undergraduate research assistant
-					at <a href="https://disnet.ku.edu.tr">Distributed Systems and Reliable Networks Research Laboratory</a>. 
-					You can reach me <a href="mailto:asahin17@ku.edu.tr">through e-mail</a>, or check out my <a href="cv.pdf">CV</a>.
+					at <a href="https://disnet.ku.edu.tr" target="_blank">Distributed Systems and Reliable Networks Research Laboratory</a>. 
+					You can reach me <a href="mailto:asahin17@ku.edu.tr">through e-mail</a>, or check out my <a href="cv.pdf" target="_blank">CV</a>.
 				</p>
 				<h5>Education
-					<span><a class="tab" href="#education">[+]</a></span>
+					<span><a class="tab" href="#education">[-]</a></span>
 				</h5>
-				<ul id="education" hidden>
+				<ul id="education">
 					<li>Koç University - <strong>BSc</strong></li>
 					<li>Robert College - <strong>High school</strong></li>
 				</ul>	
