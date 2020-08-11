@@ -44,9 +44,16 @@
 			color: #0FA0CE;
 		}
 		a.tab {
-			font-family:'Courier New', Courier, monospace;
 			font-weight: bold;
 			text-decoration: none;
+			color: #222;
+		}
+		span.tab-icon {
+			font-family:'Courier New', Courier, monospace;
+			color: #0FA0CE;
+		}
+		ul.section {
+			padding-left: 10px;
 		}
 	</style>
 </head>
@@ -58,9 +65,9 @@
 			let cnt = $(id);
 			cnt.toggle();
 			if(cnt.is(":visible")) {
-				$(toggler).html("[-]");
+				$(toggler).find(".tab-icon").html("[-]");
 			} else {
-				$(toggler).html("[+]");
+				$(toggler).find(".tab-icon").html("[+]");
 			}
 		}
 
@@ -85,25 +92,31 @@
 					at <a href="https://disnet.ku.edu.tr" target="_blank">Distributed Systems and Reliable Networks Research Laboratory</a>. 
 					You can reach me <a href="mailto:asahin17@ku.edu.tr">through e-mail</a>, or check out my <a href="cv.pdf" target="_blank">CV</a>.
 				</p>
-				<h5>Education
-					<span><a class="tab" href="#education">[-]</a></span>
+				<h5>
+					<a class="tab" href="#education">
+						<span class="tab-icon">[-]</span> Education
+					</a>		
 				</h5>
-				<ul id="education">
+				<ul class="section" id="education">
 					<li>Koç University - <strong>B.E.</strong> (Computer Engineering)</li>
 					<li>Robert College - <strong>High school</strong></li>
 				</ul>	
-				<h5>Current Projects
-					<span><a class="tab" href="#current-projects">[-]</a></span>
+				<h5>
+					<a class="tab" href="#current-projects">
+						<span class="tab-icon">[-]</span> Current Projects
+					</a>
 				</h5>
-				<ul id="current-projects">
+				<ul class="section" id="current-projects">
 					<li><b>Fog - Fog Federation:</b> Working on the fog to fog federation problem, where a user needs to authenticate itself to a foreign fog service with an authentication server residing at the home fog.</li>
 					<li><b>BFT Over Skip-Graph:</b> Working on a Sybil-resistant secure routing protocol. We also aim to provide resilience against churn attacks.</li>
 					<li><b>Skip-Graph Middleware:</b> Collaborating on the implementation of a <a href="https://github.com/yhassanzadeh13/SkipGraphNode" target="_blank" rel="noopener noreferrer">skip-graph middleware</a> with support for concurrent joins.</li>
 				</ul>
-				<h5>Past Projects
-					<span><a class="tab" href="#past-projects">[-]</a></span>
+				<h5>
+					<a class="tab" href="#past-projects">
+						<span class="tab-icon">[-]</span> Past Projects
+					</a>
 				</h5>
-				<ul id="past-projects">
+				<ul class="section" id="past-projects">
 					<li>
 						<b>Authenticated Lookups On Skip Graph</b> [<a href="https://github.com/staheri14/Guard" target="_blank">Code</a>] [<a href="https://ieeexplore.ieee.org/document/8264893" target="_blank">Reference</a>]
 					</li>
@@ -117,10 +130,12 @@
 						<b>Hypergeometric Distributions Over Skip Lists</b> [<a href="https://github.com/yhassanzadeh13/H-SkipList" target="_blank">Code</a>]
 					</li>
 				</ul>
-				<h5>Conference Demos
-					<span><a class="tab" href="#conference-demos">[-]</a></span>
+				<h5>
+					<a class="tab" href="#conference-demos">
+						<span class="tab-icon">[-]</span> Conference Demos
+					</a>
 				</h5>
-				<ul id="conference-demos">
+				<ul class="section" id="conference-demos">
 					<li>
 						<strong>A Proof-of-Concept Implementation of Guard Secure Routing Protocol</strong>
 						<br>Sanaz Taheri, Ali Utkan Şahin, Yahya Hassanzadeh, Öznur Özkasap 
@@ -162,7 +177,7 @@
 				
 				</div>
 				<hr>
-				Last updated 10 August 2020.
+				Last updated 11 August 2020.
 			</div>
 		</div>
 	</div>
