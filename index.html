@@ -27,7 +27,7 @@
 			filter: none;
 			-webkit-filter: grayscale(0);
 		}
-		.fab {
+		.fab, .fas {
 			font-size: 36px;
 		}
 		div.icons {
@@ -75,10 +75,11 @@
 			$("a.tab").click(function() {
 				toggleSection(this);
 			});
+			toggleSection($("a.tab[href='#education']"));
 			// Close all the sections if JS is enabled.
-			$("a.tab").each(function(_, x) {
-				toggleSection(x);
-			})
+			//$("a.tab").each(function(_, x) {
+			//	toggleSection(x);
+			//})
 		})
 		
 	</script>
@@ -88,7 +89,7 @@
 				<h3>Ali Utkan Şahin</h3>
 				<p>Computer Engineering student at <a href="https://www.ku.edu.tr" target="_blank">Koç University</a>.</p>
 				<p>
-					My main research interests include distributed systems, P2P networks, cryptography and security. Currently working as an undergraduate research assistant
+					My main research interests include distributed systems, networks, cryptography and security. Currently working as an undergraduate research assistant
 					at <a href="https://disnet.ku.edu.tr" target="_blank">Distributed Systems and Reliable Networks Research Laboratory</a>. 
 					You can reach me <a href="mailto:asahin17@ku.edu.tr">through e-mail</a>, or check out my <a href="cv.pdf" target="_blank">CV</a>.
 				</p>
@@ -98,7 +99,10 @@
 					</a>		
 				</h5>
 				<ul class="section" id="education">
-					<li>Koç University - <strong>BSc</strong> in Computer Science and Engineering</li>
+					<li>
+						<b>Koç University</b>
+						<br />BSc in Computer Engineering
+					</li>
 				</ul>	
 				<h5>
 					<a class="tab" href="#current-projects">
@@ -106,10 +110,10 @@
 					</a>
 				</h5>
 				<ul class="section" id="current-projects">
-					<li><b>Universal Proxy:</b> Working on the fog to fog federation problem, where a user needs to authenticate itself to a foreign fog service with an authentication server residing at the home fog.</li>
-					<li><b>Secure Routing On DHTs:</b> Working on a Byzantine fault tolerant secure routing protocol.</li>
-					<li><b>Skip-Graph Middleware:</b> Collaborating on the implementation of an 
-						<a href="https://github.com/yhassanzadeh13/SkipGraphNode" target="_blank" rel="noopener noreferrer">open-source skip-graph middleware</a> with support for concurrent joins.</li>
+					<li>
+						<b>Secure Routing On DHTs</b>
+						<br />Working on a Byzantine fault tolerant secure routing protocol.
+					</li>								
 				</ul>
 				<h5>
 					<a class="tab" href="#past-projects">
@@ -118,16 +122,26 @@
 				</h5>
 				<ul class="section" id="past-projects">
 					<li>
-						<b>Authenticated Lookups On Skip Graph</b> [<a href="https://github.com/staheri14/Guard" target="_blank">Code</a>] [<a href="https://ieeexplore.ieee.org/document/8264893" target="_blank">Reference</a>]
+						<b>Universal Fog Proxy</b> 
+						<br />Worked on the fog to fog federation problem, where a user needs to authenticate itself to a foreign fog service with an authentication server residing at the home fog.
+					</li>
+	
+					<li>
+						<b>Skip-Graph Middleware</b> [<a href="https://github.com/yhassanzadeh13/SkipGraphNode" target="_blank" rel="noopener noreferrer">Code</a>] 
+						<br />Collaborated on the implementation of an open-source skip graph middleware with support for concurrent joins.
+					</li>
+
+					<li>
+						<b>Guard Secure Routing Protocol</b> [<a href="https://github.com/staheri14/Guard" target="_blank">Code</a>] [<a href="https://ieeexplore.ieee.org/document/8264893" target="_blank">Reference</a>]
 					</li>
 					<li>
 						<b>Identity-Based Threshold Digital Signature Scheme</b> [<a href="https://github.com/utkn/GuardCrypto" target="_blank">Code</a>] [<a href="https://eprint.iacr.org/2012/073.pdf" target="_blank">Reference</a>]
 					</li>
 					<li>
-						<b>Consensus Simulations On SkipSim</b> [<a href="https://github.com/yhassanzadeh13/SkipSim/" target="_blank">Code</a>] [<a href="https://arxiv.org/abs/1904.00375" target="_blank">Reference</a>]
-					</li>
+						<b>Consensus Simulations On SkipSim</b> [<a href="https://github.com/yhassanzadeh13/SkipSim/" target="_blank">Code</a>] 
+					</lii>
 					<li>
-						<b>Hypergeometric Distributions Over Skip Lists</b> [<a href="https://github.com/yhassanzadeh13/H-SkipList" target="_blank">Code</a>]
+						<b>Hypergeometric Distributions Over Skip Lists</b> [<a href="https://github.com/yhassanzadeh13/H-SkipList" target="_blank">Code</a>] [<a href="https://arxiv.org/abs/1904.00375" target="_blank">Reference</a>]
 					</li>
 					<li>
 						<b>Gossip Simulator</b> (Contract with <a href="https://www.dapperlabs.com" target="_blank" rel="noopener noreferrer">Dapper Labs</a>)
@@ -135,27 +149,24 @@
 				</ul>
 				<h5>
 					<a class="tab" href="#conference-demos">
-						<span class="tab-icon">[-]</span> Conference Demos
+						<span class="tab-icon">[-]</span> Papers
 					</a>
 				</h5>
 				<ul class="section" id="conference-demos">
 					<li>
-						<strong>A Proof-of-Concept Implementation of Guard Secure Routing Protocol</strong>
+						<strong>Demo: A Proof-of-Concept Implementation of Guard Secure Routing Protocol</strong> [<a href="https://ieeexplore.ieee.org/document/9252054/" target="_blank">Paper</a>]		
 						<br>Sanaz Taheri, Ali Utkan Şahin, Yahya Hassanzadeh, Öznur Özkasap 
-						<br><i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020, to be presented)
-						[<a href="https://arxiv.org/pdf/2007.13212.pdf" target="_blank">Paper</a>]	[<a href="https://github.com/staheri14/Guard" target="_blank">Code</a>]	
+						<br><i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020)
 					</li>
 					<li>
-						<strong>The Skip-Graph Middleware Implementation</strong>
+						<strong>Demo: Skip-Graph Middleware Implementation</strong> [<a href="https://ieeexplore.ieee.org/document/9252072" target="_blank" rel="noopener noreferrer">Paper</a>] 
 						<br>Yahya Hassanzadeh, Nazir Nayal, Shadi Hamdan, Ali Utkan Şahin, Öznur Özkasap, Alptekin Küpçü 
-						<br><i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020, to be presented)
-						[<a href="https://github.com/yhassanzadeh13/SkipGraphNode" target="_blank">Code</a>]	
+						<br><i>IEEE Symposium on Secure and Reliable Distributed Systems.</i> (September 2020)
 					</li>
 					<li>			
-						<strong>SkipSim: Scalable Skip-Graph Simulator</strong>
+						<strong>SkipSim: Scalable Skip-Graph Simulator</strong> [<a href="https://ieeexplore.ieee.org/document/9169426/" target="_blank">Paper</a>]
 						<br>Yahya Hassanzadeh, Ali Utkan Şahin, Öznur Özkasap, Alptekin Küpçü
-						<br><i>IEEE International Conference on Blockchain.</i> (May 2020)
-						[<a href="https://arxiv.org/pdf/2007.13200.pdf" target="_blank">Paper</a>] [<a href="https://github.com/yhassanzadeh13/SkipSim" target="_blank">Code</a>]
+						<br><i>IEEE International Conference on Blockchain.</i> (May 2020)	
 					</li>
 				</ul>
 			</div>
@@ -173,14 +184,14 @@
 						</a>
 					</div>
 					<div class="four columns">
-						<a href="https://gitlab.com/utkn" class="icon" target="_blank">
-							<i class="fab fa-gitlab"></i>
+						<a href="https://scholar.google.com.tr/citations?user=FcOsO0YAAAAJ&hl=tr" class="icon" target="_blank">
+							<i class="fas fa-graduation-cap"></i>
 						</a>
 					</div>
 				
 				</div>
 				<hr>
-				Last updated 21 October 2020.
+				Last updated 19 November 2020.
 			</div>
 		</div>
 	</div>
